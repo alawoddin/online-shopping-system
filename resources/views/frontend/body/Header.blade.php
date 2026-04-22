@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-lg navbar-light main_box">
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="index.html"
+            <a class="navbar-brand logo_h" href="{{ url('/') }}"
               ><img src="{{ asset('frontend/assets/img/logo.png') }}" alt=""
             /></a>
             <button
@@ -26,7 +26,7 @@
             >
               <ul class="nav navbar-nav menu_nav ml-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home</a>
+                  <a class="nav-link" href="{{ url('/') }}">Home</a>
                 </li>
                 <li class="nav-item submenu dropdown">
                   <a
