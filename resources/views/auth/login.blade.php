@@ -5,117 +5,142 @@
     <meta charset="UTF-8">
     <meta name="author" content="Softnio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{ asset('backend/images/favicon.png') }}">
-    <title>Login Page  </title>
-    <link rel="stylesheet" href="{{ asset('backend/assets/css/style.css') }}">
 
-     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+    <link rel="shortcut icon" href="{{ asset('frontend/assets/img/fav.png') }}" />
+    <title>Login Page</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/linearicons.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/nouislider.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/main.css') }}">
+
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 
-<body class="nk-body ">
-    <div class="nk-app-root " data-sidebar-collapse="lg">
-        <div class="nk-main">
-            <div class="nk-wrap has-shape flex-column">
-                <div class="nk-shape bg-shape-blur-a start-0 top-0"></div>
-                <div class="nk-shape bg-shape-blur-b end-0 bottom-0"></div>
-                <div class="text-center pt-5">
-                    <a href="index.html" class="logo-link">
-    <div class="logo-wrap">
-        <img class="logo-img logo-light" src="{{ asset('backend/images/logo.png') }}" srcset="{{ asset('backend/images/logo2x.png') }}" alt="">
-        
-        <img class="logo-img logo-dark" src="{{ asset('backend/images/logo-dark.png') }}" srcset="{{ asset('backend/images/logo-dark2x.png') }}" alt="">
+<body>
 
-        <img class="logo-img logo-icon" src="{{ asset('backend/images/logo-icon.png') }}" srcset="{{ asset('backend/images/logo-icon2x.png') }}" alt="">
-    </div>
-                    </a>
-                </div>
-<div class="container p-2 p-sm-4 mt-auto">
-    <div class="row justify-content-center">
-        <div class="col-md-7 col-lg-5 col-xl-5 col-xxl-4">
-            <div class="nk-block">
-                <div class="nk-block-head text-center mb-4 pb-2">
-                    <div class="nk-block-head-content">
-                        <h1 class="nk-block-title mb-1">Log into Your Account</h1>
-                        <p class="small">Sign in to your account to customize your content generation settings and view your history.</p>
-                    </div>
-                </div>
+    @include('frontend.body.Header')
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-
-        <div class="row gy-3">
-            <div class="col-12">
-                <div class="form-group">
-                    <label class="form-label" for="email">Email Address</label>
-                    <div class="form-control-wrap">
-                        <input class="form-control" type="email" id="email" name="email" placeholder="Enter email address" />
-                    </div>
-                </div><!-- .form-group -->
-            </div>
-            <div class="col-12">
-                <div class="form-group">
-                    <label class="form-label" for="password">Password</label>
-                    <div class="form-control-wrap">
-                        <a href="password" class="password-toggle form-control-icon end" title="Toggle show/hide password">
-                            <em class="icon ni ni-eye inactive"></em>
-                            <em class="icon ni ni-eye-off active"></em>
-                        </a>
-                        <input class="form-control" type="password" id="password" name="password" placeholder="Enter password" />
-                    </div>
-                </div><!-- .form-group -->
-            </div>
-            <div class="col-12">
-                <a class="link small" href="{{ route('password.request') }}">Forgot password?</a>
-            </div>
-            <div class="col-12">
-                <div class="d-grid">
-                    <button class="btn btn-primary" type="submit">Login</button>
+    <!-- Start Banner Area -->
+    <section class="banner-area organic-breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+                <div class="col-first">
+                    <h1>Login / Register</h1>
+                    <nav class="d-flex align-items-center">
+                        <a href="{{ url('/') }}">Home<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="#">Login / Register</a>
+                    </nav>
                 </div>
             </div>
         </div>
-    </form>
-                <div class="text-center mt-3">
-                    <p class="small">Don’t have an account? <a href="{{ route('register') }}">Sign up</a></p>
+    </section>
+    <!-- End Banner Area -->
+
+    <!-- Login Area -->
+    <section class="login_box_area section_gap">
+        <div class="container">
+            <div class="row">
+
+                <!-- Left Side -->
+                <div class="col-lg-6">
+                    <div class="login_box_img">
+                        <img class="img-fluid" src="{{ asset('frontend/assets/img/login.jpg') }}" alt="Login">
+                        <div class="hover">
+                            <h4>New to our website?</h4>
+                            <p>Create your account and start shopping now.</p>
+                            <a class="primary-btn" href="{{ route('register') }}">Create an Account</a>
+                        </div>
+                    </div>
                 </div>
-                
+
+                <!-- Right Side -->
+                <div class="col-lg-6">
+                    <div class="login_form_inner">
+                        <h3>Log in to enter</h3>
+
+                        <!-- FIXED FORM -->
+                        <form method="POST" action="{{ route('login') }}" class="row login_form" id="contactForm">
+
+                            @csrf
+
+                            <div class="col-md-12 form-group">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Email" required>
+                            </div>
+
+                            <div class="col-md-12 form-group">
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="Password" required>
+                            </div>
+
+                            <div class="col-md-12 form-group">
+                                <div class="creat_account">
+                                    <input type="checkbox" id="remember" name="remember">
+                                    <label for="remember">Keep me logged in</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 form-group">
+                                <button type="submit" class="primary-btn">Log In</button>
+                                <a href="#">Forgot Password?</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
-</div>
+    </section>
+    <!-- End Login Area -->
 
-     @include('admin.body.footer') 
+    @include('frontend.body.Footer')
 
-            </div>
-        </div>
-    </div>
-    <script src="{{ asset('backend/assets/js/bundle.js') }}"></script>
-    <script src="{{ asset('backend/assets/js/scripts.js') }}"></script>
+    <!-- JS Files -->
+    <script src="{{ asset('frontend/assets/js/vendor/jquery-2.2.4.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/vendor/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/nouislider.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- Toastr JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-<script>
- @if(Session::has('message'))
- var type = "{{ Session::get('alert-type','info') }}"
- switch(type){
-    case 'info':
-    toastr.info(" {{ Session::get('message') }} ");
-    break;
+    <!-- Notification -->
+    <script>
+        @if(Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}";
 
-    case 'success':
-    toastr.success(" {{ Session::get('message') }} ");
-    break;
+            switch(type){
+                case 'info':
+                    toastr.info("{{ Session::get('message') }}");
+                    break;
 
-    case 'warning':
-    toastr.warning(" {{ Session::get('message') }} ");
-    break;
+                case 'success':
+                    toastr.success("{{ Session::get('message') }}");
+                    break;
 
-    case 'error':
-    toastr.error(" {{ Session::get('message') }} ");
-    break; 
- }
- @endif 
-</script>
+                case 'warning':
+                    toastr.warning("{{ Session::get('message') }}");
+                    break;
+
+                case 'error':
+                    toastr.error("{{ Session::get('message') }}");
+                    break;
+            }
+        @endif
+    </script>
 
 </body>
-
 </html>
