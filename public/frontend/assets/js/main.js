@@ -49,27 +49,33 @@ $(document).ready(function(){
     Javascript for banner area carousel
     ==================================*/
     $(".active-banner-slider").owlCarousel({
-        items:1,
-        autoplay:false,
-        autoplayTimeout: 5000,
-        loop:true,
-        nav:true,
-        navText:["<img src='img/banner/prev.png'>","<img src='img/banner/next.png'>"],
-        dots:false
-    });
+    items: 1,
+    autoplay: false,
+    autoplayTimeout: 5000,
+    loop: true,
+    nav: true,
+    navText: [
+        "<img src='/frontend/assets/img/banner/prev.png'>",
+        "<img src='/frontend/assets/img/banner/next.png'>"
+    ],
+    dots: false
+});
 
     /*=================================
     Javascript for product area carousel
     ==================================*/
     $(".active-product-area").owlCarousel({
-        items:1,
-        autoplay:false,
-        autoplayTimeout: 5000,
-        loop:true,
-        nav:true,
-        navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
-        dots:false
-    });
+    items: 1,
+    autoplay: false,
+    autoplayTimeout: 5000,
+    loop: true,
+    nav: true,
+    navText: [
+        "<img src='/frontend/assets/img/product/prev.png'>",
+        "<img src='/frontend/assets/img/product/next.png'>"
+    ],
+    dots: false
+});
 
     /*=================================
     Javascript for single product area carousel
@@ -92,7 +98,11 @@ $(document).ready(function(){
         autoplayTimeout: 5000,
         loop:true,
         nav:true,
-        navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
+        navText:
+        [
+        "<img src='/frontend/assets/img/product/prev.png'>",
+        "<img src='/frontend/assets/img/product/next.png'>"
+    ],
         dots:false
     });
 
