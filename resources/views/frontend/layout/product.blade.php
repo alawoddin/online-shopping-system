@@ -17,7 +17,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p1.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/ {{ asset('frontend/assets/') }}product/p1.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -48,7 +48,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p2.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/ {{ asset('frontend/assets/') }}product/p2.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -79,7 +79,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p3.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/ {{ asset('frontend/assets/') }}product/p3.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -110,7 +110,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p4.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/ {{ asset('frontend/assets/') }}product/p4.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -141,7 +141,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p5.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/ {{ asset('frontend/assets/') }}product/p5.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -172,7 +172,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p6.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/ {{ asset('frontend/assets/') }}product/p6.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -203,7 +203,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p7.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/ {{ asset('frontend/assets/') }}product/p7.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -234,7 +234,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p8.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/ {{ asset('frontend/assets/') }}product/p8.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -283,7 +283,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p6.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/ {{ asset('frontend/assets/') }}product/p6.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -314,7 +314,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p8.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/ {{ asset('frontend/assets/') }}product/p8.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -345,7 +345,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p3.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/ {{ asset('frontend/assets/') }}product/p3.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -376,7 +376,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p5.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/') }}product/p5.jpg" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -407,7 +407,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p1.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/product/p1.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -438,7 +438,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p4.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/product/p4.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -469,7 +469,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p1.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/product/p1.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">
@@ -500,7 +500,7 @@
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="single-product">
-                <img class="img-fluid" src="img/product/p8.jpg" alt="" />
+                <img class="img-fluid" src=" {{ asset('frontend/assets/product/p8.jpg') }}" alt="" />
                 <div class="product-details">
                   <h6>addidas New Hammer sole for Sports person</h6>
                   <div class="price">

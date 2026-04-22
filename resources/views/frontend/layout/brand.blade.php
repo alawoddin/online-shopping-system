@@ -4,35 +4,35 @@
           <a class="col single-img" href="#">
             <img
               class="img-fluid d-block mx-auto"
-              src="img/brand/1.png"
+              src=" {{ asset('frontend/assets/img/brand/1.png') }}"
               alt=""
             />
           </a>
           <a class="col single-img" href="#">
             <img
               class="img-fluid d-block mx-auto"
-              src="img/brand/2.png"
+              src=" {{ asset('frontend/assets/img/brand/2.png') }}"
               alt=""
             />
           </a>
           <a class="col single-img" href="#">
             <img
               class="img-fluid d-block mx-auto"
-              src="img/brand/3.png"
+              src=" {{ asset('frontend/assets/img/brand/3.png') }}"
               alt=""
             />
           </a>
           <a class="col single-img" href="#">
             <img
               class="img-fluid d-block mx-auto"
-              src="img/brand/4.png"
+              src=" {{ asset('frontend/assets/img/brand/4.png') }}"
               alt=""
             />
           </a>
           <a class="col single-img" href="#">
             <img
               class="img-fluid d-block mx-auto"
-              src="img/brand/5.png"
+              src=" {{ asset('frontend/assets/img/brand/5.png') }}"
               alt=""
             />
           </a>

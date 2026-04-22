@@ -26,7 +26,7 @@
                   <div class="banner-img">
                     <img
                       class="img-fluid"
-                      src="img/banner/banner-img.png"
+                      src="{{ asset('frontend/assets/img/banner/banner-img.png') }}"
                       alt=""
                     />
                   </div>
@@ -55,7 +55,7 @@
                   <div class="banner-img">
                     <img
                       class="img-fluid"
-                      src="img/banner/banner-img.png"
+                      src="{{ asset('frontend/assets/img/banner/banner-img.png') }}"
                       alt=""
                     />
                   </div>
