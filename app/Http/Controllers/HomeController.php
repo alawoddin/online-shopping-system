@@ -103,4 +103,26 @@ class HomeController extends Controller
 
         return redirect()->route('all.home')->with($notification);
     }
+
+    public function DeleteHome($id)
+{
+    $home = Home::findOrFail($id);
+
+    // delete image file
+    if (!empty($home->image) && file_exists(public_path($home->image))) {
+        unlink(public_path($home->image));
+    }
+
+    // delete record
+    $home->delete();
+
+    $notification = [
+        'message' => 'Home Deleted Successfully',
+        'alert-type' => 'success'
+    ];
+
+    return redirect()->route('all.home')->with($notification);
+}
+
+
 }
