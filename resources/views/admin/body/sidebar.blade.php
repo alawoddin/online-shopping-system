@@ -48,6 +48,31 @@
                     </li>
                 </ul>
             </li>
+
+
+            {{-- the home section is start  --}}
+
+                  <li class="nk-menu-item has-sub">
+                <a href="#" class="nk-menu-link nk-menu-toggle">
+                    <span class="nk-menu-icon">
+                        <em class="icon ni ni-folder-list"></em>
+                    </span>
+                    <span class="nk-menu-text">Home</span>
+                </a>
+                <ul class="nk-menu-sub">
+                    <li class="nk-menu-item">
+                        <a href="{{ route('all.home') }}" class="nk-menu-link">
+                            <span class="nk-menu-text">All Home</span>
+                        </a>
+                    </li>
+                    <li class="nk-menu-item">
+                         <a href="{{ route('add.home') }}" class="nk-menu-link">
+                            <span class="nk-menu-text">Add Home</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
            
           
             

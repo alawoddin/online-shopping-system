@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\IsUser;
@@ -35,6 +36,13 @@ Route::get('/profile', [AdminController::class, 'AdminProfile'])->name('admin.pr
 Route::post('/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
 Route::get('/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
 Route::post('/password/update', [AdminController::class, 'AdminPasswordUpdate'])->name('admin.password.update');
+
+
+    Route::controller(HomeController::class)->group(function () {
+        Route::get('/all/home' , "AllHome")->name('all.home');
+        Route::get('/add/home' , "AddHome")->name('add.home');
+
+    });
 
 });
 
