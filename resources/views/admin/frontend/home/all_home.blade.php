@@ -67,7 +67,12 @@
                                     </div>
                                 </td>
                                   <td class="tb-col tb-col-md">
-                                    <div class="fs-6 text-light d-inline-flex flex-wrap gap gx-2"> {{ $item->image }}
+                                    <div class="fs-6 text-light d-inline-flex flex-wrap gap gx-2"> 
+                                        
+                                        <img class="header-profile-user"
+                                    src="{{ !empty($item->image) ? asset($item->image) : asset('uploads/no_image.png') }}"
+                                    style="height: 80px;">
+
                                     </div>
                                 </td>
 

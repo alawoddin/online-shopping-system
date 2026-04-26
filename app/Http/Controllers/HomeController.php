@@ -21,21 +21,25 @@ class HomeController extends Controller
 
     public function StoreHome(Request $request) {
 
-    if ($request->file('photo')) {
-            $image = $request->file('photo');
+    if ($request->file('image')) {
+            $image = $request->file('image');
             $manager = new ImageManager(new Driver());
             $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
             $img->resize(635, 380)->save(public_path('upload/home/' . $name_gen));
             $save_url = 'upload/home/' . $name_gen;
 
-            Home::create([
+          
+        }
+
+          Home::create([
                 'title' => $request->title,
                 'description' => $request->description,
                 'link' => $request->link,
                 'image' => $save_url,
             ]);
-        }
+
+
 
         $notification = array(
             'message' => 'Category Inserted Successfully',
