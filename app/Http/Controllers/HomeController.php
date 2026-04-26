@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Home;
 use Illuminate\Http\Request;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
 
 class HomeController extends Controller
 {
@@ -16,4 +18,35 @@ class HomeController extends Controller
     public function AddHome() {
         return view('admin.frontend.home.add_home');
     }
+
+    public function StoreHome(Request $request) {
+
+    if ($request->file('photo')) {
+            $image = $request->file('photo');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(635, 380)->save(public_path('upload/home/' . $name_gen));
+            $save_url = 'upload/home/' . $name_gen;
+
+            Home::create([
+                'title' => $request->title,
+                'description' => $request->description,
+                'link' => $request->link,
+                'image' => $save_url,
+            ]);
+        }
+
+        $notification = array(
+            'message' => 'Category Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.home')->with($notification);
+    }
+
+
+
+    
+
 }

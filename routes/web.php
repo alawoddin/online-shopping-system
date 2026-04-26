@@ -41,6 +41,7 @@ Route::post('/password/update', [AdminController::class, 'AdminPasswordUpdate'])
     Route::controller(HomeController::class)->group(function () {
         Route::get('/all/home' , "AllHome")->name('all.home');
         Route::get('/add/home' , "AddHome")->name('add.home');
+        Route::post('/home/store', 'StoreHome')->name('store.home');
 
     });
 

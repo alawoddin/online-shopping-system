@@ -21,7 +21,7 @@
                 <div class="card shadown-none">
                     <div class="card-body">
 
-                        <form action="{{ route('admin.profile.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('store.home') }}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row g-3 gx-gs">
@@ -46,13 +46,13 @@
                                     </div>
                                 </div>
 
-                                
+
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label for="exampleFormControlInputText1" class="form-label">Home
                                             Link</label>
                                         <div class="form-control-wrap">
-                                            <input type="text" name="description" class="form-control">
+                                            <input type="text" name="link" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -70,9 +70,8 @@
                                     <div class="form-group">
                                         <label for="exampleFormControlInputText1" class="form-label"> </label>
                                         <div class="form-control-wrap">
-                                           <img id="showImage"
-        src="{{ url('upload/no_image.jpg') }}"
-        style="width:80px; height:80px; margin-top:10px;">
+                                            <img id="showImage" src="{{ url('upload/no_image.jpg') }}"
+                                                style="width:80px; height:80px; margin-top:10px;">
                                         </div>
                                     </div>
                                 </div>
@@ -93,16 +92,14 @@
 
 
     <script type="text/javascript">
-    $(document).ready(function(){
-        $('#image').change(function(e){
-            var reader = new FileReader();
-            reader.onload = function(e){
-                $('#showImage').attr('src',e.target.result);
-            }
-            reader.readAsDataURL(e.target.files['0']);
+        $(document).ready(function() {
+            $('#image').change(function(e) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#showImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            })
         })
-    })
-
-</script>
-
+    </script>
 @endsection
