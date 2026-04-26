@@ -49,6 +49,12 @@ class HomeController extends Controller
         return redirect()->route('all.home')->with($notification);
     }
 
+    public function EditHome ($id) {
+        $alldata = Home::find($id);
+
+        return view('admin.frontend.home.edit_home' , compact('alldata'));
+    }
+
 
 
     
