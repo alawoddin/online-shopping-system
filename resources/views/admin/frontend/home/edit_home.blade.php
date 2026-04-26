@@ -21,8 +21,9 @@
                 <div class="card shadown-none">
                     <div class="card-body">
 
-                        <form action="{{ route('store.home') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('update.home', $alldata->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
+
 
                             <div class="row g-3 gx-gs">
 
