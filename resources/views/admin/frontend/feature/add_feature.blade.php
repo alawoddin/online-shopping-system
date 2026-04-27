@@ -7,7 +7,7 @@
             <div class="nk-block-head nk-page-head">
                 <div class="nk-block-head-between">
                     <div class="nk-block-head-content">
-                        <h2 class="display-6">Add Home </h2>
+                        <h2 class="display-6">Add Feature </h2>
 
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                                 </div>
 
 
-                              
+
 
                                 <div class="col-md-6">
                                     <div class="form-group">

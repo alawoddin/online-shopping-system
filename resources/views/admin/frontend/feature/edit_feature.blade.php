@@ -7,7 +7,7 @@
             <div class="nk-block-head nk-page-head">
                 <div class="nk-block-head-between">
                     <div class="nk-block-head-content">
-                        <h2 class="display-6">Add Feature </h2>
+                        <h2 class="display-6">Edit Feature </h2>
 
                     </div>
                 </div>
@@ -21,7 +21,8 @@
                 <div class="card shadown-none">
                     <div class="card-body">
 
-                        <form action="{{ route('update.feature' ,$editdata->id ) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('update.feature', $editdata->id) }}" method="post"
+                            enctype="multipart/form-data">
                             @csrf
 
                             <div class="row g-3 gx-gs">
@@ -30,7 +31,8 @@
                                     <div class="form-group">
                                         <label for="exampleFormControlInputText1" class="form-label">Feature Title </label>
                                         <div class="form-control-wrap">
-                                            <input type="text" name="title" value="{{ $editdata->title }}" class="form-control">
+                                            <input type="text" name="title" value="{{ $editdata->title }}"
+                                                class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -41,13 +43,14 @@
                                         <label for="exampleFormControlInputText1" class="form-label">Feature
                                             Description</label>
                                         <div class="form-control-wrap">
-                                            <input type="text" name="description" value="{{ $editdata->description }}"  class="form-control">
+                                            <input type="text" name="description" value="{{ $editdata->description }}"
+                                                class="form-control">
                                         </div>
                                     </div>
                                 </div>
 
 
-                              
+
 
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -63,8 +66,8 @@
                                         <label for="exampleFormControlInputText1" class="form-label"> </label>
                                         <div class="form-control-wrap">
                                             <img id="showImage"
-                 src="{{ !empty($editdata->image) ? asset($editdata->image) : asset('upload/no_image.jpg') }}"
-                 style="width:80px; height:80px; margin-top:10px;">
+                                                src="{{ !empty($editdata->image) ? asset($editdata->image) : asset('upload/no_image.jpg') }}"
+                                                style="width:80px; height:80px; margin-top:10px;">
                                         </div>
                                     </div>
                                 </div>

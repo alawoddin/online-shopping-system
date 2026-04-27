@@ -10,7 +10,7 @@
 
                     </div>
 
-                  
+
 
                     <div class="nk-block-head-content">
                         <ul class="nk-block-tools">
@@ -24,10 +24,10 @@
 
             <div class="d-flex align-items-center justify-content-between border-bottom border-light mt-5 mb-4 pb-2">
                 <h5>All Feature </h5>
-                  <div class="nk-block-head-content">
-                        <a href="{{ route('add.feature') }}" class="bg-info p-3 rounded text-black">Add Feature</a>
+                <div class="nk-block-head-content">
+                    <a href="{{ route('add.feature') }}" class="bg-info p-3 rounded text-black">Add Feature</a>
 
-                    </div>
+                </div>
             </div>
             <div class="card">
                 <table class="table table-middle mb-0">
@@ -42,7 +42,7 @@
                             <th class="tb-col tb-col-sm">
                                 <div class="fs-13px text-base">Description</div>
                             </th>
-                            
+
                             <th class="tb-col tb-col-sm">
                                 <div class="fs-13px text-base">image</div>
                             </th>
@@ -67,13 +67,13 @@
                                 <td class="tb-col tb-col-sm">
                                     <div class="fs-6 text-light">{!! Str::limit($item->description, 50, '...') !!} </div>
                                 </td>
-                                 
-                                  <td class="tb-col tb-col-md">
-                                    <div class="fs-6 text-light d-inline-flex flex-wrap gap gx-2"> 
-                                        
+
+                                <td class="tb-col tb-col-md">
+                                    <div class="fs-6 text-light d-inline-flex flex-wrap gap gx-2">
+
                                         <img class="header-profile-user"
-                                    src="{{ !empty($item->image) ? asset($item->image) : asset('uploads/no_image.png') }}"
-                                    style="height: 80px;">
+                                            src="{{ !empty($item->image) ? asset($item->image) : asset('uploads/no_image.png') }}"
+                                            style="height: 80px;">
 
                                     </div>
                                 </td>
