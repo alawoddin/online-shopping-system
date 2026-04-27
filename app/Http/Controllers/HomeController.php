@@ -133,5 +133,36 @@ class HomeController extends Controller
         return view('admin.frontend.feature.all_feature' , compact('alldata'));
     }
 
+    public function AddFeature() {
+        return view('admin.frontend.feature.add_feature');
+    }
+
+    public function StoreFeature(Request $request) {
+
+           if ($request->file('image')) {
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(32, 26)->save(public_path('upload/feature/' . $name_gen));
+            $save_url = 'upload/feature/' . $name_gen;
+        }
+
+        Feature::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $save_url,
+        ]);
+
+
+
+        $notification = array(
+            'message' => 'Feature Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.feature')->with($notification);
+    }
+
 
 }

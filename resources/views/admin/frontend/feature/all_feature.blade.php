@@ -25,7 +25,7 @@
             <div class="d-flex align-items-center justify-content-between border-bottom border-light mt-5 mb-4 pb-2">
                 <h5>All Feature </h5>
                   <div class="nk-block-head-content">
-                        <a href="{{ route('add.home') }}" class="bg-info p-3 rounded text-black">Add Feature</a>
+                        <a href="{{ route('add.feature') }}" class="bg-info p-3 rounded text-black">Add Feature</a>
 
                     </div>
             </div>
