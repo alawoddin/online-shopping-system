@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Feature;
 use App\Models\Home;
 use Illuminate\Http\Request;
 use Intervention\Image\Drivers\Gd\Driver;
@@ -123,6 +124,14 @@ class HomeController extends Controller
 
     return redirect()->route('all.home')->with($notification);
 }
+
+// the feature section is start in home controller 
+
+    public function AllFeature() {
+        $alldata = Feature::all();
+
+        return view('admin.frontend.feature.all_feature' , compact('alldata'));
+    }
 
 
 }

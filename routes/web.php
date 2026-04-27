@@ -48,6 +48,17 @@ Route::post('/password/update', [AdminController::class, 'AdminPasswordUpdate'])
 
     });
 
+     Route::controller(HomeController::class)->group(function () {
+        Route::get('/all/feature' , "AllFeature")->name('all.feature');
+        Route::get('/add/home' , "AddHome")->name('add.home');
+        Route::post('/home/store', 'StoreHome')->name('store.home');
+        Route::get('edit/home/{id}', 'EditHome')->name('edit.home');
+        Route::post('/update/home/{id}', 'UpdateHome')->name('update.home');
+        Route::get('delete/home/{id}', 'DeleteHome')->name('delete.home');
+
+    });
+
+
 });
 
 //End Admin  Route 
