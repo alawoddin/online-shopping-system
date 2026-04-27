@@ -66,8 +66,8 @@
                         </a>
                     </li>
                     <li class="nk-menu-item">
-                         <a href="{{ route('add.home') }}" class="nk-menu-link">
-                            <span class="nk-menu-text">Add Home</span>
+                         <a href="{{ route('all.feature') }}" class="nk-menu-link">
+                            <span class="nk-menu-text">Add Feature</span>
                         </a>
                     </li>
                 </ul>

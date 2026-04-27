@@ -9,6 +9,9 @@
                         <h2 class="display-6">All Heading </h2>
 
                     </div>
+
+                  
+
                     <div class="nk-block-head-content">
                         <ul class="nk-block-tools">
                             {{-- <li><a class="btn btn-primary" href="{{ route('add.heading') }}"><em
@@ -21,6 +24,10 @@
 
             <div class="d-flex align-items-center justify-content-between border-bottom border-light mt-5 mb-4 pb-2">
                 <h5>All Heading </h5>
+                  <div class="nk-block-head-content">
+                        <a href="{{ route('add.home') }}" class="bg-info p-3 rounded text-black">Add Home</a>
+
+                    </div>
             </div>
             <div class="card">
                 <table class="table table-middle mb-0">
