@@ -214,5 +214,24 @@ class HomeController extends Controller
         return redirect()->route('all.feature')->with($notification);
     }
 
+    public function DeleteFeature($id) {
+        $features = Feature::findOrFail($id);
+
+    // delete image file
+    if (!empty($features->image) && file_exists(public_path($features->image))) {
+        unlink(public_path($features->image));
+    }
+
+    // delete record
+    $features->delete();
+
+    $notification = [
+        'message' => 'Feature Deleted Successfully',
+        'alert-type' => 'success'
+    ];
+
+    return redirect()->route('all.feature')->with($notification);
+    }
+
 
 }
