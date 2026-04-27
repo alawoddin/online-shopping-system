@@ -52,8 +52,8 @@ Route::post('/password/update', [AdminController::class, 'AdminPasswordUpdate'])
         Route::get('/all/feature' , "AllFeature")->name('all.feature');
         Route::get('/add/feature' , "AddFeature")->name('add.feature');
         Route::post('/feature/store', 'StoreFeature')->name('store.feature');
-        Route::get('edit/home/{id}', 'EditHome')->name('edit.home');
-        Route::post('/update/home/{id}', 'UpdateHome')->name('update.home');
+        Route::get('edit/feature/{id}', 'EditFeature')->name('edit.feature');
+        Route::post('/update/feature/{id}', 'UpdateFeature')->name('update.feature');
         Route::get('delete/home/{id}', 'DeleteHome')->name('delete.home');
 
     });

@@ -164,5 +164,55 @@ class HomeController extends Controller
         return redirect()->route('all.feature')->with($notification);
     }
 
+    public function EditFeature($id) {
+        $editdata = Feature::findOr($id);
+
+        return view('admin.frontend.feature.edit_feature' , compact('editdata'));
+    }
+
+    public function UpdateFeature(Request $request , $id) {
+        $features = Feature::findOrFail($id);
+
+        // validate (VERY IMPORTANT)
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
+
+        $save_url = $features->image; // keep old image
+
+        if ($request->hasFile('image')) {
+
+            // delete old image safely
+            if (!empty($features->image) && file_exists(public_path($features->image))) {
+                unlink(public_path($features->image));
+            }
+
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+
+            $img = $manager->read($image);
+            $img->resize(32, 26)->save(public_path('upload/feature/' . $name_gen));
+
+            $save_url = 'upload/feature/' . $name_gen;
+        }
+
+        $features->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $save_url,
+        ]);
+
+        $notification = [
+            'message' => 'Feature Updated Successfully',
+            'alert-type' => 'success'
+        ];
+
+        return redirect()->route('all.feature')->with($notification);
+    }
+
 
 }
