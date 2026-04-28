@@ -70,6 +70,14 @@
                             <span class="nk-menu-text">All Feature</span>
                         </a>
                     </li>
+
+                    <li class="nk-menu-item">
+                         <a href="{{ route('all.brand') }}" class="nk-menu-link">
+                            <span class="nk-menu-text">All Brand</span>
+                        </a>
+                    </li>
+
+
                 </ul>
             </li>
 

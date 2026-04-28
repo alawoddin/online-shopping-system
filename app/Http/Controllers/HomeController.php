@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Feature;
 use App\Models\Home;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager;
 
@@ -231,6 +233,20 @@ class HomeController extends Controller
     ];
 
     return redirect()->route('all.feature')->with($notification);
+    }
+
+    // end method 
+
+    public function AllBrand() {
+        $brands = Cache::remember('brand_list' , 60 , function () {
+            return Brand::all();
+        });
+
+        return view("admin.frontend.brand.all_brand" , compact("brands"));
+    }
+
+    public function AddBrand() {
+        return view("admin.frontend.brand.add_brand");
     }
 
 
