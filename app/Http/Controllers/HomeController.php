@@ -257,7 +257,7 @@ class HomeController extends Controller
     public function StoreBrand(Request $request) {
 
     $save_url = null; 
-    
+
 
             if ($request->file('image')) {
             $image = $request->file('image');
@@ -281,6 +281,12 @@ class HomeController extends Controller
         );
 
         return redirect()->route('all.brand')->with($notification);
+    }
+
+    public function EditBrand($id) {
+        $brands = Brand::findOrFail($id);
+
+        return view("admin.frontend.brand.edit_brand" , compact('brands'));
     }
 
 
