@@ -249,5 +249,31 @@ class HomeController extends Controller
         return view("admin.frontend.brand.add_brand");
     }
 
+    public function StoreBrand(Request $request) {
+
+            if ($request->file('image')) {
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(200, 200)->save(public_path('upload/brand/' . $name_gen));
+            $save_url = 'upload/brand/' . $name_gen;
+        }
+
+        Brand::create([
+            'link' => $request->link,
+            'image' => $save_url,
+        ]);
+
+
+
+        $notification = array(
+            'message' => 'Feature Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.brand')->with($notification);
+    }
+
 
 }
