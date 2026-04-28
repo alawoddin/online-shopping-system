@@ -14,7 +14,7 @@ class HomeController extends Controller
 {
     public function AllHome()
     {
-        $allhomedata  = Home::get();
+        $allhomedata  = home::all();
 
         return view('admin.frontend.home.all_home', compact('allhomedata'));
     }
@@ -26,6 +26,8 @@ class HomeController extends Controller
 
     public function StoreHome(Request $request)
     {
+
+    $save_url = null; 
 
         if ($request->file('image')) {
             $image = $request->file('image');
@@ -55,7 +57,7 @@ class HomeController extends Controller
 
     public function EditHome($id)
     {
-        $alldata = Home::findOr($id);
+        $alldata = Home::findOrFail($id);
 
         return view('admin.frontend.home.edit_home', compact('alldata'));
     }
@@ -141,6 +143,9 @@ class HomeController extends Controller
 
     public function StoreFeature(Request $request) {
 
+    $save_url = null; 
+
+
            if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
@@ -167,7 +172,7 @@ class HomeController extends Controller
     }
 
     public function EditFeature($id) {
-        $editdata = Feature::findOr($id);
+        $editdata = Feature::findOrFail($id);
 
         return view('admin.frontend.feature.edit_feature' , compact('editdata'));
     }
@@ -250,6 +255,9 @@ class HomeController extends Controller
     }
 
     public function StoreBrand(Request $request) {
+
+    $save_url = null; 
+    
 
             if ($request->file('image')) {
             $image = $request->file('image');
