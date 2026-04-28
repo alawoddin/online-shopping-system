@@ -53,7 +53,7 @@ class HomeController extends Controller
 
     public function EditHome($id)
     {
-        $alldata = Home::find($id);
+        $alldata = Home::findOr($id);
 
         return view('admin.frontend.home.edit_home', compact('alldata'));
     }

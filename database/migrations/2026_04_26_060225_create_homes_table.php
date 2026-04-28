@@ -27,6 +27,13 @@ return new class extends Migration
             $table->string("image")->nullable();
             $table->timestamps();
         });
+         Schema::create('brands', function (Blueprint $table) {
+            $table->id();
+            $table->string("link");
+            $table->string("image")->nullable();
+
+            $table->timestamps();
+        });
 
     }
 
