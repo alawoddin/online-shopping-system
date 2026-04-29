@@ -379,7 +379,27 @@ public function UpdateProduct(Request $request,$id) {
         'message' => 'Product Updated Successfully',
         'alert-type' => 'success'
     ]);
+
 }
+
+    public function DeleteProduct(int $id) {
+        $products = Product::findOrFail($id);
+
+    // delete image file
+    if (!empty($products->image) && file_exists(public_path($products->image))) {
+        unlink(public_path($products->image));
+    }
+
+    // delete record
+    $products->delete();
+
+    $notification = [
+        'message' => 'products Deleted Successfully',
+        'alert-type' => 'success'
+    ];
+
+    return redirect()->route('all.product')->with($notification);
+    }
 
 
 }
