@@ -20,18 +20,27 @@ return new class extends Migration
             $table->timestamps();
         });
 
-         Schema::create('features', function (Blueprint $table) {
+        Schema::create('features', function (Blueprint $table) {
             $table->id();
             $table->string("title");
             $table->text("description");
             $table->string("image")->nullable();
             $table->timestamps();
         });
-         Schema::create('brands', function (Blueprint $table) {
+        Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->string("link");
             $table->string("image")->nullable();
 
+            $table->timestamps();
+        });
+
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->string("title");
+            $table->decimal('price', 10, 2);
+            $table->decimal('discount', 10, 2)->nullable();
+            $table->string("image")->nullable();
             $table->timestamps();
         });
 
