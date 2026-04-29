@@ -338,5 +338,48 @@ class HomeController extends Controller
         return view('admin.frontend.product.edit_product' , compact('alldata'));
     }
 
+public function UpdateProduct(Request $request,$id) {
+
+    $products = Product::findOrFail($id);
+
+    $request->validate([
+        'title' => 'required',
+        'price' => 'required|numeric',
+        'discount' => 'nullable|numeric',
+        'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+    ]);
+
+    $save_url = $products->image;
+
+    if ($request->hasFile('image')) {
+
+        if ($products->image && file_exists(public_path($products->image))) {
+            unlink(public_path($products->image));
+        }
+
+        $image = $request->file('image');
+        $manager = new ImageManager(new Driver());
+
+        $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+
+        $img = $manager->read($image);
+        $img->resize(255, 271)->save(public_path('upload/product/' . $name_gen));
+
+        $save_url = 'upload/product/' . $name_gen;
+    }
+
+    $products->update([
+        'title' => $request->title,
+        'price' => $request->price,
+        'discount' => $request->discount,
+        'image' => $save_url,
+    ]);
+
+    return redirect()->route('all.product')->with([
+        'message' => 'Product Updated Successfully',
+        'alert-type' => 'success'
+    ]);
+}
+
 
 }

@@ -21,14 +21,10 @@
                 <div class="card shadown-none">
                     <div class="card-body">
 
-                        <form action="{{ route('store.product') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('update.product' , $alldata->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row g-3 gx-gs">
-
-
-
-
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleFormControlInputText1" class="form-label">Product
