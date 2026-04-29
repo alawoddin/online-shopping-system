@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Models\Feature;
 use App\Models\Home;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Intervention\Image\Drivers\Gd\Driver;
@@ -287,6 +288,14 @@ class HomeController extends Controller
         $brands = Brand::findOrFail($id);
 
         return view("admin.frontend.brand.edit_brand" , compact('brands'));
+    }
+
+    // the product section is start 
+
+    public function AllProduct() {
+        $allproduct = Product::all();
+
+        return view('admin.frontend.product.all_product' , compact('allproduct'));
     }
 
 

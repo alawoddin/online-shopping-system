@@ -77,6 +77,12 @@
                         </a>
                     </li>
 
+                    <li class="nk-menu-item">
+                         <a href="{{ route('all.product') }}" class="nk-menu-link">
+                            <span class="nk-menu-text">All Product</span>
+                        </a>
+                    </li>
+
 
                 </ul>
             </li>

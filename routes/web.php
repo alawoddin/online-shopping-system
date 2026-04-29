@@ -69,6 +69,17 @@ Route::post('/password/update', [AdminController::class, 'AdminPasswordUpdate'])
 
     });
 
+    // brand start
+     Route::controller(HomeController::class)->group(function () {
+        Route::get('/all/product' , "AllProduct")->name('all.product');
+        Route::get('/add/brand' , "AddBrand")->name('add.brand');
+        Route::post('/brand/store', 'StoreBrand')->name('store.brand');
+        Route::get('edit/brand/{id}', 'EditBrand')->name('edit.brand');
+        Route::post('/update/feature/{id}', 'UpdateFeature')->name('update.feature');
+        Route::get('delete/feature/{id}', 'DeleteFeature')->name('delete.feature');
+
+    });
+
 
 });
 
