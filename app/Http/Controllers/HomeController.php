@@ -302,5 +302,35 @@ class HomeController extends Controller
         return view('admin.frontend.product.add_product');
     }
 
+    public function StoreProduct(Request $request) {
+        $save_url = null; 
+
+
+           if ($request->file('image')) {
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(255, 271)->save(public_path('upload/product/' . $name_gen));
+            $save_url = 'upload/product/' . $name_gen;
+        }
+
+        Product::create([
+            'title' => $request->title,
+            'price' => $request->price,
+            'discount' => $request->discount,
+            'image' => $save_url,
+        ]);
+
+
+
+        $notification = array(
+            'message' => 'Product Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.product')->with($notification);
+    }
+
 
 }

@@ -73,7 +73,7 @@ Route::post('/password/update', [AdminController::class, 'AdminPasswordUpdate'])
      Route::controller(HomeController::class)->group(function () {
         Route::get('/all/product' , "AllProduct")->name('all.product');
         Route::get('/add/product' , "AddProduct")->name('add.product');
-        Route::post('/brand/store', 'StoreBrand')->name('store.brand');
+        Route::post('/brand/product', 'StoreProduct')->name('store.product');
         Route::get('edit/brand/{id}', 'EditBrand')->name('edit.brand');
         Route::post('/update/feature/{id}', 'UpdateFeature')->name('update.feature');
         Route::get('delete/feature/{id}', 'DeleteFeature')->name('delete.feature');
