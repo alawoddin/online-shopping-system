@@ -36,7 +36,7 @@
                             <th class="tb-col">
                                 <div class="fs-13px text-base">Sl</div>
                             </th>
-                           
+
                             <th class="tb-col tb-col-sm">
                                 <div class="fs-13px text-base">link</div>
                             </th>
@@ -62,7 +62,7 @@
                                     <div class="fs-6 text-light d-inline-flex flex-wrap gap gx-2"> {{ $item->link }}
                                     </div>
                                 </td>
-                                
+
 
                                 <td class="tb-col tb-col-md">
                                     <div class="fs-6 text-light d-inline-flex flex-wrap gap gx-2">
