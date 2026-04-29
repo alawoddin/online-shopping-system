@@ -332,5 +332,11 @@ class HomeController extends Controller
         return redirect()->route('all.product')->with($notification);
     }
 
+    public function EditProduct(int $id) {
+        $alldata = Product::findOrFail($id);
+
+        return view('admin.frontend.product.edit_product' , compact('alldata'));
+    }
+
 
 }

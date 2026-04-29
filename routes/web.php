@@ -74,7 +74,7 @@ Route::post('/password/update', [AdminController::class, 'AdminPasswordUpdate'])
         Route::get('/all/product' , "AllProduct")->name('all.product');
         Route::get('/add/product' , "AddProduct")->name('add.product');
         Route::post('/brand/product', 'StoreProduct')->name('store.product');
-        Route::get('edit/brand/{id}', 'EditBrand')->name('edit.brand');
+        Route::get('edit/product/{id}', 'EditProduct')->name('edit.product');
         Route::post('/update/feature/{id}', 'UpdateFeature')->name('update.feature');
         Route::get('delete/feature/{id}', 'DeleteFeature')->name('delete.feature');
 
