@@ -26,7 +26,7 @@
 
                             <div class="row g-3 gx-gs">
 
-                             
+
 
 
                                 <div class="col-md-6">
@@ -39,7 +39,7 @@
                                     </div>
                                 </div>
 
-                                    <div class="col-md-6">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleFormControlInputText1" class="form-label">Product
                                             Price</label>
@@ -50,7 +50,7 @@
                                 </div>
 
 
-                                    <div class="col-md-6">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="exampleFormControlInputText1" class="form-label">Product
                                             Discount</label>

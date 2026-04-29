@@ -72,12 +72,12 @@
                                     </div>
                                 </td>
 
-                                 <td class="tb-col tb-col-md">
+                                <td class="tb-col tb-col-md">
                                     <div class="fs-6 text-light d-inline-flex flex-wrap gap gx-2"> {{ $item->price }}
                                     </div>
                                 </td>
 
-                                 <td class="tb-col tb-col-md">
+                                <td class="tb-col tb-col-md">
                                     <div class="fs-6 text-light d-inline-flex flex-wrap gap gx-2"> {{ $item->discount }}
                                     </div>
                                 </td>
