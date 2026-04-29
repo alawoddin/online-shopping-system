@@ -284,7 +284,7 @@ class HomeController extends Controller
         return redirect()->route('all.brand')->with($notification);
     }
 
-    public function EditBrand($id) {
+    public function EditBrand(int $id) {
         $brands = Brand::findOrFail($id);
 
         return view("admin.frontend.brand.edit_brand" , compact('brands'));
@@ -296,6 +296,10 @@ class HomeController extends Controller
         $allproduct = Product::all();
 
         return view('admin.frontend.product.all_product' , compact('allproduct'));
+    }
+
+    public function AddProduct() {
+        return view('admin.frontend.product.add_product');
     }
 
 

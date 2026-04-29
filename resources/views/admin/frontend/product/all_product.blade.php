@@ -25,7 +25,7 @@
             <div class="d-flex align-items-center justify-content-between border-bottom border-light mt-5 mb-4 pb-2">
                 <h5>All Brand </h5>
                 <div class="nk-block-head-content">
-                    <a href="{{ route('add.brand') }}" class="bg-info p-3 rounded text-black">Add Product</a>
+                    <a href="{{ route('add.product') }}" class="bg-info p-3 rounded text-black">Add Product</a>
 
                 </div>
             </div>
