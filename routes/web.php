@@ -84,7 +84,7 @@ Route::post('/password/update', [AdminController::class, 'AdminPasswordUpdate'])
      Route::controller(HomeController::class)->group(function () {
         Route::get('/all/sponser' , "AllSponser")->name('all.sponser');
         Route::get('/add/sponser' , "AddSponser")->name('add.sponser');
-        Route::post('/brand/product', 'StoreProduct')->name('store.product');
+        Route::post('/brand/sponser', 'StoreSponser')->name('store.sponser');
         Route::get('edit/product/{id}', 'EditProduct')->name('edit.product');
         Route::post('/update/product/{id}', 'UpdateProduct')->name('update.product');
         Route::get('delete/product/{id}', 'DeleteProduct')->name('delete.product');

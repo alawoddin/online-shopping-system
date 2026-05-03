@@ -414,5 +414,30 @@ public function UpdateProduct(Request $request,$id) {
         return view('admin.frontend.sponser.add_sponser');
     }
 
+    public function StoreSponser(Request $request) {
+
+         if ($request->file('image')) {
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(109,70)->save(public_path('upload/sponser/'.$name_gen));
+            $save_url = 'upload/sponser/'.$name_gen;
+    
+        sponser::create([
+                'link' => $request->link,
+                'image' => $save_url,
+            ]);
+        
+
+        $notification = array(
+            'message' => 'Sponser Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.sponser')->with($notification); 
+    }
+    }
+
 
 }
