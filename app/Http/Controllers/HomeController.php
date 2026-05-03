@@ -439,5 +439,49 @@ public function UpdateProduct(Request $request,$id) {
     }
     }
 
+    public function EditSponser(int $id) {
+        $finddata = sponser::findOrFail($id);
+
+        return view('admin.frontend.sponser.edit_sponser' , compact('finddata'));
+    }
+
+    public function UpdateSponser(Request $request) {
+        $spon = $request->id;
+
+         if ($request->file('image')) {
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(109,70)->save(public_path('upload/sponser/'.$name_gen));
+            $save_url = 'upload/sponser/'.$name_gen;
+            
+            sponser::findOrFail($spon)->update([
+                'link' => $request->link,
+                'image' => $save_url,
+            ]);
+
+            $notification = array(
+                'message' => 'Sponser Updated With image Successfully',
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->route('all.sponser')->with($notification); 
+        
+        } else {
+
+            sponser::findOrFail($spon)->update([
+                'link' => $request->link,
+            ]);
+            
+            $notification = array(
+                'message' => 'Sponser update without image Successfully',
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->route('all.sponser')->with($notification);  
+        }
+    }
+
 
 }

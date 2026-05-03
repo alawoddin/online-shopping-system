@@ -85,8 +85,8 @@ Route::post('/password/update', [AdminController::class, 'AdminPasswordUpdate'])
         Route::get('/all/sponser' , "AllSponser")->name('all.sponser');
         Route::get('/add/sponser' , "AddSponser")->name('add.sponser');
         Route::post('/brand/sponser', 'StoreSponser')->name('store.sponser');
-        Route::get('edit/product/{id}', 'EditProduct')->name('edit.product');
-        Route::post('/update/product/{id}', 'UpdateProduct')->name('update.product');
+        Route::get('edit/sponser/{id}', 'EditSponser')->name('edit.sponser');
+        Route::post('/update/sponser', 'UpdateSponser')->name('update.sponser');
         Route::get('delete/product/{id}', 'DeleteProduct')->name('delete.product');
 
     });
