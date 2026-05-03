@@ -6,6 +6,7 @@ use App\Models\Brand;
 use App\Models\Feature;
 use App\Models\Home;
 use App\Models\Product;
+use App\Models\sponser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Intervention\Image\Drivers\Gd\Driver;
@@ -399,6 +400,18 @@ public function UpdateProduct(Request $request,$id) {
     ];
 
     return redirect()->route('all.product')->with($notification);
+    }
+
+    // the sponser setion is start
+
+    public function AllSponser() {
+        $alldata = sponser::all();
+
+        return view('admin.frontend.sponser.all_sponser' , compact('alldata'));
+    }
+
+    public function AddSponser() {
+        return view('admin.frontend.sponser.add_sponser');
     }
 
 

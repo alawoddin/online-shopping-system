@@ -69,7 +69,7 @@ Route::post('/password/update', [AdminController::class, 'AdminPasswordUpdate'])
 
     });
 
-    // brand start
+    // product start
      Route::controller(HomeController::class)->group(function () {
         Route::get('/all/product' , "AllProduct")->name('all.product');
         Route::get('/add/product' , "AddProduct")->name('add.product');
@@ -79,6 +79,18 @@ Route::post('/password/update', [AdminController::class, 'AdminPasswordUpdate'])
         Route::get('delete/product/{id}', 'DeleteProduct')->name('delete.product');
 
     });
+
+        // sponser start
+     Route::controller(HomeController::class)->group(function () {
+        Route::get('/all/sponser' , "AllSponser")->name('all.sponser');
+        Route::get('/add/sponser' , "AddSponser")->name('add.sponser');
+        Route::post('/brand/product', 'StoreProduct')->name('store.product');
+        Route::get('edit/product/{id}', 'EditProduct')->name('edit.product');
+        Route::post('/update/product/{id}', 'UpdateProduct')->name('update.product');
+        Route::get('delete/product/{id}', 'DeleteProduct')->name('delete.product');
+
+    });
+
 
 
 });

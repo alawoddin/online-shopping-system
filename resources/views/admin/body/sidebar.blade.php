@@ -83,6 +83,12 @@
                         </a>
                     </li>
 
+                    <li class="nk-menu-item">
+                         <a href="{{ route('all.sponser') }}" class="nk-menu-link">
+                            <span class="nk-menu-text">All Sponser</span>
+                        </a>
+                    </li>
+
 
                 </ul>
             </li>
