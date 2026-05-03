@@ -483,5 +483,20 @@ public function UpdateProduct(Request $request,$id) {
         }
     }
 
+    public function DeleteSponser(int $id) {
+        $item = sponser::findOrFail($id);
+        $img = $item->image;
+        unlink($img);
+
+        sponser::findOrFail($id)->delete();
+
+        $notification = array(
+                'message' => 'Sponser Delete  Successfully',
+                'alert-type' => 'success'
+            );
+        
+        return redirect()->back()->with($notification);
+    }
+
 
 }

@@ -76,7 +76,7 @@
 
                                 <td class="tb-col tb-col-sm">
                                     <a href="{{ route('edit.sponser', $item->id) }}" class="btn btn-success btn-sm">Edit</a>
-                                    <a href="{{ route('delete.feature', $item->id) }}" class="btn btn-danger btn-sm"
+                                    <a href="{{ route('delete.sponser', $item->id) }}" class="btn btn-danger btn-sm"
                                         id="delete">Delete</a>
                                 </td>
 
