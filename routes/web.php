@@ -95,9 +95,9 @@ Route::post('/password/update', [AdminController::class, 'AdminPasswordUpdate'])
      Route::controller(HomeController::class)->group(function () {
         Route::get('/all/deal' , "Alldeal")->name('all.deal');
         Route::get('/add/deal' , "AddDeal")->name('add.deal');
-        Route::post('/brand/deal', 'StoreDeal')->name('store.deal');
-        Route::get('edit/sponser/{id}', 'EditSponser')->name('edit.sponser');
-        Route::post('/update/sponser', 'UpdateSponser')->name('update.sponser');
+        Route::post('/store/deal', 'StoreDeal')->name('store.deal');
+        Route::get('edit/deal/{id}', 'EditDeal')->name('edit.deal');
+        Route::post('/update/deal', 'UpdateDeal')->name('update.deal');
         Route::get('delete/sponser/{id}', 'DeleteSponser')->name('delete.sponser');
 
     });

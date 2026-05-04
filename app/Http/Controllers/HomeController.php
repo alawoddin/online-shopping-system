@@ -538,5 +538,53 @@ public function UpdateProduct(Request $request,$id) {
     }
     }
 
+    public function EditDeal(int $id) {
+        $editdeal = Deal::findOrFail($id);
+
+        return view('admin.frontend.deal.edit_deal' , compact('editdeal'));
+    }
+
+    public function UpdateDeal(Request $request) {
+        $spon = $request->id;
+
+         if ($request->file('image')) {
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(70,70)->save(public_path('upload/deal/'.$name_gen));
+            $save_url = 'upload/deal/'.$name_gen;
+            
+            Deal::findOrFail($spon)->update([
+                'title' => $request->title,
+                'price' => $request->price,
+                'discount' => $request->discount,
+                'image' => $save_url,
+            ]);
+
+            $notification = array(
+                'message' => 'Deal Updated With image Successfully',
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->route('all.deal')->with($notification); 
+        
+        } else {
+
+            Deal::findOrFail($spon)->update([
+                'title' => $request->title,
+                'price' => $request->price,
+                'discount' => $request->discount,
+            ]);
+            
+            $notification = array(
+                'message' => 'Deal update without image Successfully',
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->route('all.deal')->with($notification);  
+        }
+    }
+
 
 }
