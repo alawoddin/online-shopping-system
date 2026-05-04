@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use App\Models\Deal;
 use App\Models\Feature;
 use App\Models\Home;
 use App\Models\Product;
@@ -496,6 +497,18 @@ public function UpdateProduct(Request $request,$id) {
             );
         
         return redirect()->back()->with($notification);
+    }
+
+    //end method 
+
+    public function Alldeal() {
+        $deals = Deal::all();
+
+        return view('admin.frontend.deal.all_deal' , compact('deals'));
+    }
+
+    public function AddDeal() {
+        return view('admin.frontend.deal.add_deal');
     }
 
 

@@ -44,12 +44,22 @@ return new class extends Migration
             $table->timestamps();
         });
 
-          Schema::create('sponsers', function (Blueprint $table) {
+        Schema::create('sponsers', function (Blueprint $table) {
             $table->id();
             $table->string("link");
             $table->string("image")->nullable();
             $table->timestamps();
         });
+
+        Schema::create('deals', function (Blueprint $table) {
+            $table->id();
+            $table->string("title");
+            $table->decimal('price', 10, 2);
+            $table->decimal('discount', 10, 2)->nullable();
+            $table->string("image")->nullable();
+            $table->timestamps();
+        });
+
 
     }
 
