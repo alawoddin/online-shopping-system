@@ -98,7 +98,7 @@ Route::post('/password/update', [AdminController::class, 'AdminPasswordUpdate'])
         Route::post('/store/deal', 'StoreDeal')->name('store.deal');
         Route::get('edit/deal/{id}', 'EditDeal')->name('edit.deal');
         Route::post('/update/deal', 'UpdateDeal')->name('update.deal');
-        Route::get('delete/sponser/{id}', 'DeleteSponser')->name('delete.sponser');
+        Route::get('delete/deal/{id}', 'DeleteDeal')->name('delete.deal');
 
     });
 

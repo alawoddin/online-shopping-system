@@ -586,5 +586,20 @@ public function UpdateProduct(Request $request,$id) {
         }
     }
 
+    public function DeleteDeal(int $id) {
+        $item = Deal::findOrFail($id);
+        $img = $item->image;
+        unlink($img);
+
+        Deal::findOrFail($id)->delete();
+
+        $notification = array(
+                'message' => 'deal Delete  Successfully',
+                'alert-type' => 'success'
+            );
+        
+        return redirect()->back()->with($notification);
+    }
+
 
 }
