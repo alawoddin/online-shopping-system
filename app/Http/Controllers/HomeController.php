@@ -292,6 +292,60 @@ class HomeController extends Controller
         return view("admin.frontend.brand.edit_brand" , compact('brands'));
     }
 
+    public function UpdateBrand(Request $request) {
+        $brand = $request->id;
+
+         if ($request->file('image')) {
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(200, 200)->save(public_path('upload/brand/'.$name_gen));
+            $save_url = 'upload/brand/'.$name_gen;
+            
+            Brand::findOrFail($brand)->update([
+                'link' => $request->link,
+                'image' => $save_url,
+            ]);
+
+            $notification = array(
+                'message' => 'Deal Updated With image Successfully',
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->route('all.brand')->with($notification); 
+        
+        } else {
+
+            Brand::findOrFail($brand)->update([
+                'link' => $request->link,
+            ]);
+            
+            $notification = array(
+                'message' => 'Brand update without image Successfully',
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->route('all.brand')->with($notification);  
+        }
+    }
+
+    public function DeleteBrand(int $id) {
+        $item = Brand::findOrFail($id);
+        $img = $item->image;
+        unlink($img);
+
+        Brand::findOrFail($id)->delete();
+
+        $notification = array(
+                'message' => 'Brand Delete  Successfully',
+                'alert-type' => 'success'
+            );
+        
+        return redirect()->back()->with($notification);
+    }
+
+
     // the product section is start 
 
     public function AllProduct() {

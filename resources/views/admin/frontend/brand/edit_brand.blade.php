@@ -21,9 +21,11 @@
                 <div class="card shadown-none">
                     <div class="card-body">
 
-                        <form action="{{ route('update.feature', $brands->id) }}" method="post"
+                        <form action="{{ route('update.brand') }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
+
+                            <input type="hidden" name="id" value="{{ $brands->id }}">
 
                             <div class="row g-3 gx-gs">
 
