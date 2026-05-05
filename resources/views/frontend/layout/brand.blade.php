@@ -1,41 +1,20 @@
 <section class="brand-area section_gap">
       <div class="container">
+
+        @php
+          $brands = \App\Models\Brand::all();
+        @endphp
         <div class="row">
-          <a class="col single-img" href="#">
+          @foreach ($brands as $item)
+              <a class="col single-img" href="{{ $item->link }}">
             <img
               class="img-fluid d-block mx-auto"
-              src=" {{ asset('frontend/assets/img/brand/1.png') }}"
+              src="{{ !empty($item->image) ? asset($item->image) : asset('uploads/no_image.png') }}"
               alt=""
             />
           </a>
-          <a class="col single-img" href="#">
-            <img
-              class="img-fluid d-block mx-auto"
-              src=" {{ asset('frontend/assets/img/brand/2.png') }}"
-              alt=""
-            />
-          </a>
-          <a class="col single-img" href="#">
-            <img
-              class="img-fluid d-block mx-auto"
-              src=" {{ asset('frontend/assets/img/brand/3.png') }}"
-              alt=""
-            />
-          </a>
-          <a class="col single-img" href="#">
-            <img
-              class="img-fluid d-block mx-auto"
-              src=" {{ asset('frontend/assets/img/brand/4.png') }}"
-              alt=""
-            />
-          </a>
-          <a class="col single-img" href="#">
-            <img
-              class="img-fluid d-block mx-auto"
-              src=" {{ asset('frontend/assets/img/brand/5.png') }}"
-              alt=""
-            />
-          </a>
+          @endforeach
+        
         </div>
       </div>
     </section>
